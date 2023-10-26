@@ -45,11 +45,36 @@ public class App {
                  */
                 allData.add(row);
             }
+
+            /**
+             * Display all the data from the list
+             */
+            displayCSVData(allData, headerList);
         } catch (Exception e) {
             /**
              * Displaying the exception if any
              */
             System.out.println(e.getMessage());
+        }
+    }
+
+    private static void displayCSVData(List<String[]> allData, String[] headerList) {
+        /**
+         * Displaying the header
+         */
+        for (String header : headerList) {
+            System.out.print(header + " | ");
+        }
+        System.out.println();
+
+        /**
+         * Displaying the data
+         */
+        for (String[] row : allData) {
+            for (String data : row) {
+                System.out.print(data + " | ");
+            }
+            System.out.println();
         }
     }
 }
